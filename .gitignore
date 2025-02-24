@@ -3,3 +3,7 @@
 **/obj/
 **/.vs/
 **/v17/.wsuo
+/.vs/BharatTexfabWebsite/v17
+Backend/BharatTexfab.Apis/shop.db-shm
+Backend/BharatTexfab.Apis/shop.db-wal
+.vs/BharatTexfabWebsite/v17/.wsuo
