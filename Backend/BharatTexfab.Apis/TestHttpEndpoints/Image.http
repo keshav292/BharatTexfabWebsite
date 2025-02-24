@@ -1,0 +1,17 @@
+# Upload an Image (Admin Only)
+POST https://localhost:32773/api/productImage
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiQWRtaW4iLCJuYmYiOjE3Mzk3OTIzODUsImV4cCI6MTczOTc5NTk4NCwiaWF0IjoxNzM5NzkyMzg1LCJpc3MiOiJCaGFyYXRUZXhmYWJCYWNrZW5kIiwiYXVkIjoiQmhhcmF0a1RleGZhYkFkbWluIn0.4m34ieppH_AKqjsahDd1g9zIn80SfnqOOmo3u3JjjB8
+Content-Type: multipart/form-data; boundary=boundary123
+
+--boundary123
+Content-Disposition: form-data; name="file"; filename="test-image.jpg"
+Content-Type: image/jpeg
+
+< download.jpg
+--boundary123--
+
+###
+
+# Delete an Image (Admin Only)
+DELETE https://localhost:32773/api/productImage/1b1bf8b2-9712-4233-8a5e-22d0311ccb34_test-image.jpg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiQWRtaW4iLCJuYmYiOjE3Mzk3OTIzODUsImV4cCI6MTczOTc5NTk4NCwiaWF0IjoxNzM5NzkyMzg1LCJpc3MiOiJCaGFyYXRUZXhmYWJCYWNrZW5kIiwiYXVkIjoiQmhhcmF0a1RleGZhYkFkbWluIn0.4m34ieppH_AKqjsahDd1g9zIn80SfnqOOmo3u3JjjB8

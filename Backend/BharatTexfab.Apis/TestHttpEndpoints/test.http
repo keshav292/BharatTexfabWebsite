@@ -1,0 +1,20 @@
+# For more info on HTTP files go to https://aka.ms/vs/httpfile
+GET https://localhost:32775/api/products
+
+###
+GET https://localhost:32775/api/categories
+
+### Create a New Product (POST)
+POST https://localhost:32777/api/products
+Content-Type: application/json
+
+{
+  "name": "Cotton Shirt",
+  "description": "Premium cotton shirt with long sleeves",
+  "price": 1499.99,
+  "imageUrl": "https://example.com/shirt.jpg",
+  "categoryId": 1
+}
+
+### Get All Products (GET)
+GET https://localhost:32777/api/products/

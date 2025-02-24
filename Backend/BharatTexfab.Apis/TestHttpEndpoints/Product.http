@@ -1,0 +1,34 @@
+﻿### 🔍 Get all products
+GET https://localhost:32773/api/products
+Accept: application/json
+
+### 🔍 Get a product by ID
+GET https://localhost:32773/api/products/1
+Accept: application/json
+
+### ➕ Create a new product
+POST https://localhost:32777/api/products
+Content-Type: application/json
+
+{
+    "name": "Cotton Shirt 2",
+    "description": "A high-quality cotton shirt.",
+    "price": 999.99,
+    "imageUrl": "httpss://example.com/shirt.jpg",
+    "categoryId": 1
+}
+
+### ❌ Try to create a product with the same name (should fail with 409 Conflict)
+POST https://localhost:32777/api/products
+Content-Type: application/json
+
+{
+    "name": "Cotton Shirt",
+    "description": "Duplicate product should fail.",
+    "price": 799.99,
+    "imageUrl": "httpss://example.com/shirt2.jpg",
+    "categoryId": 1
+}
+
+### 🗑️ Delete a product
+DELETE https://localhost:32777/api/products/1

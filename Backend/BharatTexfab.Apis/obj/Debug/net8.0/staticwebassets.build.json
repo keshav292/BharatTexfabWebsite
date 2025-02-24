@@ -1,0 +1,20 @@
+{
+  "Version": 1,
+  "Hash": "EiXGIp8qkcACaKuREEwlDLEyKbhiM8RVPRXyjGZ0Ryw=",
+  "Source": "BharatTexfab.Apis",
+  "BasePath": "_content/BharatTexfab.Apis",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "BharatTexfab.Apis\\wwwroot",
+      "Source": "BharatTexfab.Apis",
+      "ContentRoot": "D:\\Bharat Texfab\\Website\\Backend\\BharatTexfab.Apis\\wwwroot\\",
+      "BasePath": "_content/BharatTexfab.Apis",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [],
+  "Endpoints": []
+}
