@@ -1,13 +1,13 @@
 ### 1. Get All Categories
-GET https://localhost:32777/api/categories
+GET https://localhost:32781/api/categories
 Accept: application/json
 
 ### 2. Get Category by ID (Replace `{id}` with a valid category ID)
-GET https://localhost:32777/api/categories/1
+GET https://localhost:32781/api/categories/1
 Accept: application/json
 
 ### 3. Create a New Category
-POST https://localhost:32777/api/categories
+POST https://localhost:32781/api/categories
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiQWRtaW4iLCJuYmYiOjE3Mzk2NDgzMzYsImV4cCI6MTczOTY1MTkzNiwiaWF0IjoxNzM5NjQ4MzM2LCJpc3MiOiJCaGFyYXRUZXhmYWJCYWNrZW5kIiwiYXVkIjoiQmhhcmF0a1RleGZhYkFkbWluIn0.y6Ar9zzF4WpnFO6KLH-W7FdBiSD_IUccM7U9ds0liyE
 { 
@@ -15,5 +15,5 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiQWRtaW4iL
 }
 
 ### 4. Delete a Category by ID (Replace `{id}` with a valid category ID)
-DELETE https://localhost:32777/api/categories/2
+DELETE https://localhost:32781/api/categories/2
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiQWRtaW4iLCJuYmYiOjE3Mzk2NDYxMTYsImV4cCI6MTczOTY0OTcxNiwiaWF0IjoxNzM5NjQ2MTE2LCJpc3MiOiJ5b3VySXNzdWVyIiwiYXVkIjoieW91ckF1ZGllbmNlIn0.DIn8Otlb9nZ7fr2QDyiSixhdvd44xVqJ0DogrFuLS1s

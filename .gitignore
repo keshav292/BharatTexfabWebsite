@@ -1,2 +1,5 @@
-.vs/slnx.sqlite
-.vs/BharatTexfabWebsite/FileContentIndex/3a02a15e-287b-4b96-846c-61c26f78a9c0.vsidx
+# Ignore bin and obj in all subfolders
+**/bin/
+**/obj/
+**/.vs/
+**/v17/.wsuo

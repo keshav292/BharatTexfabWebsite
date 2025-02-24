@@ -1,5 +1,5 @@
 ﻿### Request a JWT Token (Login)
-POST https://localhost:32773/api/auth/login
+POST https://localhost:32781/api/auth/login
 Content-Type: application/json
 
 {
@@ -8,5 +8,5 @@ Content-Type: application/json
 }
 
 ### NOT WORKING NOW - Copy Bearer TOKEN from here  Access Protected Resource (Replace `TOKEN_HERE` with the actual JWT)
-GET https://localhost:32773/api/protected
+GET https://localhost:32781/api/protected
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiQWRtaW4iLCJuYmYiOjE3Mzk2NDgzMzYsImV4cCI6MTczOTY1MTkzNiwiaWF0IjoxNzM5NjQ4MzM2LCJpc3MiOiJCaGFyYXRUZXhmYWJCYWNrZW5kIiwiYXVkIjoiQmhhcmF0a1RleGZhYkFkbWluIn0.y6Ar9zzF4WpnFO6KLH-W7FdBiSD_IUccM7U9ds0liyE

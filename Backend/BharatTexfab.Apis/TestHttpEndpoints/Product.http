@@ -1,5 +1,5 @@
 ﻿### 🔍 Get all products
-GET https://localhost:32773/api/products
+GET https://localhost:32781/api/products
 Accept: application/json
 
 ### 🔍 Get a product by ID
