@@ -1,0 +1,54 @@
+<div class="table-container">
+  <h2>Manage Categories</h2>
+
+  <table mat-table [dataSource]="categories()" class="mat-elevation-z8">
+    <!-- Category Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let category">{{ category.name }}</td>
+    </ng-container>
+
+    <!-- Actions Column -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let category" class="action-buttons">
+        <button
+          mat-icon-button
+          color="primary"
+          (click)="router.navigate(['/admin/categories/edit', category.id])"
+        >
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button
+          mat-icon-button
+          color="warn"
+          (click)="deleteCategory(category.id)"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+        <button
+          class="manage-category-button"
+          (click)="
+            router.navigate(['/admin/categories', category.id, 'products'])
+          "
+        >
+          Manage Products
+        </button>
+      </td>
+    </ng-container>
+
+    <!-- Table Header & Row Definitions -->
+    <tr mat-header-row *matHeaderRowDef="['name', 'actions']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['name', 'actions']"></tr>
+  </table>
+
+  <!-- Add Category Button -->
+  <button
+    mat-raised-button
+    color="primary"
+    routerLink="/admin/categories/add"
+    class="add-button"
+  >
+    <mat-icon>add</mat-icon> Add Category
+  </button>
+</div>

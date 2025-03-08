@@ -1,0 +1,64 @@
+<!-- Back to Categories Button -->
+<button
+  mat-button
+  color="primary"
+  class="back-button"
+  routerLink="/admin/categories"
+>
+  <mat-icon>arrow_back</mat-icon> Back to Categories
+</button>
+
+<mat-card class="form-card">
+  <mat-card-title>{{
+    isEditMode == false ? "Add Category" : "Edit Category"
+  }}</mat-card-title>
+
+  <mat-card-content>
+    <form [formGroup]="categoryForm" (ngSubmit)="saveCategory()">
+      <!-- Category Name -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Category Name</mat-label>
+        <input matInput formControlName="name" required />
+      </mat-form-field>
+
+      <div class="upload-container">
+        <input
+          type="file"
+          (change)="uploadImage($event)"
+          accept="image/png, image/jpeg, image/webp"
+          class="file-input"
+          id="fileUpload"
+        />
+        <label for="fileUpload" class="upload-label">
+          <mat-icon>cloud_upload</mat-icon> Upload Image
+        </label>
+      </div>
+
+      <!-- Progress Indicator -->
+      <mat-progress-bar
+        *ngIf="imageUploading()"
+        mode="indeterminate"
+        class="progress-bar"
+      ></mat-progress-bar>
+
+      <!-- Error Message -->
+      <p *ngIf="imageUploadError()" class="error">{{ imageUploadError() }}</p>
+
+      <!-- Display Image Preview -->
+      <div class="image-preview" *ngIf="imageSrc">
+        <img [src]="imageSrc" alt="Uploaded Image" />
+      </div>
+
+      <!-- Save Button -->
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        class="save-btn"
+        [disabled]="categoryForm.invalid || imageUploading()"
+      >
+        <mat-icon>save</mat-icon> Save Category
+      </button>
+    </form>
+  </mat-card-content>
+</mat-card>

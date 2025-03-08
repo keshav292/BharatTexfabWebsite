@@ -1,0 +1,65 @@
+<div class="table-container">
+  <h2>Manage Products of {{ categoryName }}</h2>
+
+  <!-- Back to Categories Button -->
+  <button
+    mat-button
+    color="primary"
+    class="back-button"
+    routerLink="/admin/categories"
+  >
+    <mat-icon>arrow_back</mat-icon> Back to Categories
+  </button>
+
+  <table mat-table [dataSource]="products()" class="mat-elevation-z8">
+    <!-- Product Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let product">{{ product.name }}</td>
+    </ng-container>
+
+    <!-- Price Column -->
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef>Price</th>
+      <td mat-cell *matCellDef="let product">${{ product.price }}</td>
+    </ng-container>
+
+    <!-- Actions Column -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let product" class="action-buttons">
+        <button
+          mat-icon-button
+          color="primary"
+          (click)="router.navigate(['/admin/products/edit', product.id])"
+        >
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button
+          mat-icon-button
+          color="warn"
+          (click)="deleteProduct(product.id)"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <!-- Table Header & Row Definitions -->
+    <tr mat-header-row *matHeaderRowDef="['name', 'price', 'actions']"></tr>
+    <tr
+      mat-row
+      *matRowDef="let row; columns: ['name', 'price', 'actions']"
+    ></tr>
+  </table>
+
+  <!-- Add Product Button -->
+  <button
+    mat-raised-button
+    color="primary"
+    [routerLink]="['/admin/products/add']"
+    class="add-button"
+  >
+    <mat-icon>add</mat-icon> Add Product
+  </button>
+</div>

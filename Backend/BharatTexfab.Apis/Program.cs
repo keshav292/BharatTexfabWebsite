@@ -20,10 +20,20 @@ builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddEndpointsApiExplorer(); // Register repository
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAngularApp",
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:4200") // Allow Angular frontend
+                  .AllowAnyMethod() // Allow GET, POST, PUT, DELETE, etc.
+                  .AllowAnyHeader(); // Allow all headers
+        });
+});
 
 var app = builder.Build();
 //app.UseAntiforgery();
-
+app.UseCors("AllowAngularApp");
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();

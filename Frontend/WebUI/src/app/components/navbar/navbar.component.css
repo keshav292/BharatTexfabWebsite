@@ -1,0 +1,51 @@
+/* Sidenav Container */
+.sidenav-container {
+    height: 100vh;
+    
+  }
+
+  /* Sidebar Styles */
+  .sidenav {
+    width: 100px;
+    color: white;
+    background-color: rgb(97, 61, 61);
+  }
+
+  /* Toolbar (Navbar) */
+  mat-toolbar {
+    display: flex;
+    align-items: center;
+    color: white;
+    background-color: rgb(238, 127, 30);
+  }
+
+  .spacer {
+    flex: 1;
+  }
+
+  .logo {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  /* Navigation Links (Visible on Desktop) */
+  .nav-links {
+    display: flex;
+    gap: 15px;
+    margin-left: 25px;
+  }
+
+  /* Mobile Menu Button */
+  .mobile-menu-btn {
+    display: none;
+  }
+
+  /* Hide Nav Links and Show Hamburger on Small Screens */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+    .mobile-menu-btn {
+      display: block;
+    }
+  }

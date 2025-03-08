@@ -1,0 +1,48 @@
+/* Make sure sidenav and content take full height */
+mat-sidenav-container {
+    height: 90.5vh;
+  }
+  
+  /* Style the sidenav */
+  mat-sidenav {
+    width: 80vw; /* Default: 80% of viewport width */
+    max-width: 250px; /* Limit max width on large screens */
+    background-color: #f4f4f4;
+  }
+  
+  /* Mobile screens: Make it full width */
+  @media (max-width: 600px) {
+    mat-sidenav {
+      width: 100vw; /* Full width on small screens */
+      max-width: 100%; /* Override max-width */
+    }
+  }
+
+  .active-link {
+    background: rgba(0, 0, 0, 0.1); /* Light background */
+    font-weight: bold;
+    border-right: 4px solid orange; /* Primary theme color */
+  }
+  
+  
+  /* Remove default anchor styles */
+  mat-nav-list a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 500;
+  }
+  
+  /* Highlight active link */
+  mat-nav-list a.active {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Toolbar styles */
+  mat-toolbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 16px;
+    color: rgb(196, 196, 245)
+  }
+
+  

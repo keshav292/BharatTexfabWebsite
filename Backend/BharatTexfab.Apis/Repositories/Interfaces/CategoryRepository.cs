@@ -10,7 +10,7 @@ namespace BharatTexfab.Apis.Repositories.Interfaces
         Task<List<CategoryDto>> GetAllAsync();
         Task<CategoryDto?> GetByIdAsync(int id);
         Task<CategoryDto> AddAsync(Category category);
-        Task<bool> DeleteAsync(int id);
+        Task<string> DeleteAsync(int id);
     }
 
 
@@ -32,6 +32,7 @@ namespace BharatTexfab.Apis.Repositories.Interfaces
                 {
                     Id = c.Id,
                     Name = c.Name,
+                    ImageUrl = c.ImageUrl,
                     ProductIds = c.Products != null ? c.Products.Select(p => p.Id).ToList() : new List<int>()
                 })
                 .ToListAsync();
@@ -45,6 +46,7 @@ namespace BharatTexfab.Apis.Repositories.Interfaces
                 {
                     Id = c.Id,
                     Name = c.Name,
+                    ImageUrl = c.ImageUrl,
                     ProductIds = c.Products != null ? c.Products.Select(p => p.Id).ToList() : new List<int>()
                 })
                 .FirstOrDefaultAsync();
@@ -64,19 +66,21 @@ namespace BharatTexfab.Apis.Repositories.Interfaces
             {
                 Id = category.Id,
                 Name = category.Name,
+                ImageUrl = category.ImageUrl,
                 ProductIds = new List<int>()
             };
         }
 
 
-        public async Task<bool> DeleteAsync(int id)
+        public async Task<string> DeleteAsync(int id)
         {
-            var category = await _db.Categories.FindAsync(id);
-            if (category == null) return false;
+            var category = await _db.Categories.Include(c => c.Products).FirstOrDefaultAsync(c => c.Id == id); 
+            if (category == null) return "NotFound";
+            if (category.Products?.Count > 0) return "HasProducts";
 
             _db.Categories.Remove(category);
             await _db.SaveChangesAsync();
-            return true;
+            return "Deleted";
         }
     }
 

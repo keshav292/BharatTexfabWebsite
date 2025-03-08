@@ -52,14 +52,23 @@ namespace BharatTexfab.Apis.Endpoints
             // DELETE: Remove a category by ID
             root.MapDelete("/{id}", async (int id, ICategoryRepository repository) =>
             {
-                var success = await repository.DeleteAsync(id);
-                return success ? Results.NoContent() : Results.NotFound();
+                var result = await repository.DeleteAsync(id);
+
+                return result switch
+                {
+                    "Deleted" => Results.Ok(new { message = "Category deleted successfully." }),
+                    "HasProducts" => Results.Conflict(new { message = "Category contains products and cannot be deleted." }),
+                    "NotFound" => Results.NotFound(new { message = "Category not found." }),
+                    _ => Results.StatusCode(500) // Fallback for unexpected cases
+                };
             })
             .WithSummary("Delete a category")
-            .WithDescription("Removes a category from the system")
-            .Produces(StatusCodes.Status204NoContent)
+            .WithDescription("Removes a category from the system if it has no products.")
+            .Produces(StatusCodes.Status200OK)
+            .Produces(StatusCodes.Status409Conflict)
             .Produces(StatusCodes.Status404NotFound)
             .RequireAuthorization("AdminOnly");
+
 
             return app;
         }

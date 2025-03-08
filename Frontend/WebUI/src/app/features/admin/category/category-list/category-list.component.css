@@ -1,0 +1,76 @@
+.table-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 16px;
+    font-size: 1.5rem;
+    color: orange;
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  th {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgb(243, 175, 49);
+  }
+  
+  td {
+    padding: 10px;
+  }
+
+  mat-icon-button {
+    color: orange
+  }
+  
+
+  .action-buttons {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+  }
+  
+  .manage-category-button {
+    background-color: #eea663;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s;
+  }
+  
+  .manage-category-button:hover {
+    background-color: orangered;
+  }
+  
+  .add-button {
+    display: flex;
+    color:#eea663;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  @media (max-width: 600px) {
+    .table-container {
+      padding: 10px;
+    }
+  
+    .add-button {
+      font-size: 0.9rem;
+    }
+  }
+  

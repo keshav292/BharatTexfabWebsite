@@ -32,6 +32,17 @@ namespace BharatTexfab.Apis.Endpoints
             .Produces<ProductDto>()
             .Produces(StatusCodes.Status404NotFound);
 
+            // 🔹 GET: Get all products by category ID
+            root.MapGet("/category/{categoryId}", async (int categoryId, IProductRepository repository) =>
+            {
+                var products = await repository.GetByCategoryIdAsync(categoryId);
+                return Results.Ok(products.Any() ? products : new List<ProductDto>());
+            })
+            .WithSummary("Retrieve all products by category ID")
+            .WithDescription("Gets all products belonging to a specific category")
+            .Produces<List<ProductDto>>()
+            .Produces(StatusCodes.Status404NotFound);
+
             // 🔹 POST: Create a new product
             root.MapPost("/", async (Product product, IProductRepository repository) =>
             {
@@ -50,6 +61,30 @@ namespace BharatTexfab.Apis.Endpoints
             .Produces<ProductDto>(StatusCodes.Status201Created)
             .Produces(StatusCodes.Status409Conflict)
             .RequireAuthorization("AdminOnly");
+
+            root.MapPut("/{id}", async (int id, Product product, IProductRepository repository) =>
+            {
+                try
+                {
+                    var updatedProduct = await repository.UpdateAsync(id, product);
+                    return Results.Ok(updatedProduct); // ✅ Return 200 OK with the updated product
+                }
+                catch (KeyNotFoundException)
+                {
+                    return Results.NotFound(new { message = "Product not found." }); // ✅ 404 if product doesn't exist
+                }
+                catch (InvalidOperationException ex)
+                {
+                    return Results.Conflict(new { message = ex.Message }); // ✅ 409 for uniqueness/category validation
+                }
+            })
+            .WithSummary("Update an existing product")
+            .WithDescription("Updates a product in the system.")
+            .Produces<ProductDto>(StatusCodes.Status200OK)
+            .Produces(StatusCodes.Status404NotFound)
+            .Produces(StatusCodes.Status409Conflict)
+            .RequireAuthorization("AdminOnly");
+
 
             // 🔹 DELETE: Remove a product by ID
             root.MapDelete("/{id}", async (int id, IProductRepository repository) =>

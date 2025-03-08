@@ -1,0 +1,45 @@
+/* Background Blur Effect */
+.login-container {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  /* Glassmorphism Card */
+  .login-card {
+    width: 320px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(15px);
+    color: white;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  h2 {
+    margin-bottom: 16px;
+  }
+  
+  /* Full Width Inputs */
+  .full-width {
+    width: 100%;
+  }
+
+  
+  /* Fade-in Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  

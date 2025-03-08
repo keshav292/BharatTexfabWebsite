@@ -1,25 +1,27 @@
-﻿### 🔍 Get all products
-GET https://localhost:32781/api/products
+﻿@baseUrl = https://localhost:32771
+
+### 🔍 Get all products
+GET {{baseUrl}}/api/products
 Accept: application/json
 
 ### 🔍 Get a product by ID
-GET https://localhost:32773/api/products/1
+GET {{baseUrl}}/api/products/1
 Accept: application/json
 
 ### ➕ Create a new product
-POST https://localhost:32777/api/products
+POST {{baseUrl}}/api/products 
 Content-Type: application/json
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiQWRtaW4iLCJuYmYiOjE3NDE0NDQ0NjMsImV4cCI6MTc0MTQ0ODA2MywiaWF0IjoxNzQxNDQ0NDYzLCJpc3MiOiJCaGFyYXRUZXhmYWJCYWNrZW5kIiwiYXVkIjoiQmhhcmF0a1RleGZhYkFkbWluIn0._43uy9jqLrkcL-dpeCdc6PvyTpqMq8o6s6Lko58rSwU
 {
     "name": "Cotton Shirt 2",
     "description": "A high-quality cotton shirt.",
     "price": 999.99,
     "imageUrl": "httpss://example.com/shirt.jpg",
-    "categoryId": 1
+    "categoryId": 7
 }
 
 ### ❌ Try to create a product with the same name (should fail with 409 Conflict)
-POST https://localhost:32777/api/products
+POST {{baseUrl}}/api/products
 Content-Type: application/json
 
 {
@@ -31,4 +33,4 @@ Content-Type: application/json
 }
 
 ### 🗑️ Delete a product
-DELETE https://localhost:32777/api/products/1
+DELETE {{baseUrl}}/api/products/1

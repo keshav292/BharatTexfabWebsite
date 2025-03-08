@@ -1,0 +1,63 @@
+.table-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    color: orange;
+    text-align: center;
+    margin-bottom: 16px;
+    font-size: 1.5rem;
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  th {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: orange;
+  }
+  
+  td {
+    padding: 10px;
+  }
+  
+  .action-buttons {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  
+  .add-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .back-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    font-size: 14px;
+  }
+  
+  @media (max-width: 600px) {
+    .table-container {
+      padding: 10px;
+    }
+  
+    .add-button {
+      font-size: 0.9rem;
+    }
+  }
+  
