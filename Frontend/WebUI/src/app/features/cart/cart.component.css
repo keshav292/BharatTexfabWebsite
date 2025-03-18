@@ -1,0 +1,202 @@
+.cart-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 15px;
+    background: #fafafa;
+    border-radius: 10px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.07);
+  }
+  
+  /* Heading */
+  h2 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    color: #444;
+    margin-bottom: 15px;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  /* Empty Cart */
+  .empty-cart {
+    text-align: center;
+    padding: 20px;
+    font-size: 15px;
+    color: #777;
+  }
+  
+  /* Cart Item */
+  .cart-item {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    gap: 12px;
+  }
+  
+  .cart-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: nowrap; /* Prevent excessive stretching */
+  }
+  
+  /* Product Image */
+  .cart-image {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+  
+  /* Product Details */
+  .cart-details {
+    flex-grow: 1;
+    min-width: 120px;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .cart-details h3 {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 2px;
+    color: #555;
+  }
+  
+  .cart-details p {
+    font-size: 14px;
+    color: #777;
+  }
+  
+  /* Quantity Controls */
+  .quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .quantity-controls mat-icon {
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+    transition: 0.3s;
+  }
+  
+  .quantity-controls mat-icon:hover {
+    color: #009688;
+  }
+  
+  .quantity {
+    font-size: 16px;
+    font-weight: 600;
+    color: #444;
+    min-width: 25px;
+    text-align: center;
+  }
+  
+  /* Product Total */
+  .product-total {
+    font-size: 15px;
+    font-weight: 400;
+    color: #444;
+    min-width: 70px;
+    text-align: right;
+  }
+  
+  /* Remove Icon */
+  mat-card-actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  mat-card-actions mat-icon {
+    font-size: 22px;
+    cursor: pointer;
+    color: #e57373;
+    transition: 0.3s;
+    margin-left: 10px;
+  }
+  
+  mat-card-actions mat-icon:hover {
+    color: #d32f2f;
+  }
+  
+  /* Cart Summary */
+  .cart-summary {
+    text-align: center;
+    margin-top: 15px;
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .cart-summary h3 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #555;
+  }
+  
+  /* Checkout Button */
+  .cart-summary button {
+    background-color: #009688;
+    color: white;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 20px;
+    transition: 0.3s;
+  }
+  
+  .cart-summary button:hover {
+    background-color: #00796b;
+    transform: scale(1.04);
+  }
+  
+  @media (max-width: 768px) {
+    .cart-content {
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      padding-right: 10px; /* Extra padding to prevent overflow */
+    }
+  
+    .cart-details {
+      text-align: left;
+      flex-grow: 1;
+      min-width: 100px;
+    }
+  
+    .quantity-controls {
+      justify-content: center;
+      flex-shrink: 0; /* Prevent shrinking */
+    }
+  
+    .product-total {
+      text-align: right;
+      flex-shrink: 0;
+    }
+  
+    /* Force Delete button inside card */
+    mat-card-actions {
+      justify-content: center;
+      width: 100%;
+      display: flex;
+      padding: 5px 0;
+    }
+  
+    mat-card-actions mat-icon {
+      font-size: 22px;
+      padding: 5px;
+      min-width: 30px;
+      text-align: center;
+      position: relative;
+      right: 0; /* Prevents it from shifting out */
+    }
+  }
+  
+  

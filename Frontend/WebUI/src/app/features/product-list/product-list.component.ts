@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { Product } from '../../shared/models/Product';
 import { ProductService } from '../../shared/services/ProductService/product.service';
 import { CategoryService } from '../../shared/services/CategoryService/category.service';
@@ -27,6 +27,7 @@ export class ProductListComponent {
   productService = inject(ProductService);
   categoryService = inject(CategoryService);
   imageService = inject(ImageService);
+  router = inject(Router);
 
   categoryId = signal<number | null>(null);
   products = signal<Product[]>([]);
@@ -60,5 +61,9 @@ export class ProductListComponent {
 
   getImageSource(imageUrl: string): string {
     return this.imageService.getImageUrl(imageUrl);
+  }
+
+  onClickProductItem(productId: number) {
+    this.router.navigateByUrl(`/product/${productId}`);
   }
 }

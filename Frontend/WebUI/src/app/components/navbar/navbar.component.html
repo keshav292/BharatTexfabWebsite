@@ -28,7 +28,7 @@
         <!-- Navigation Links (Hidden on Mobile) -->
         <div class="nav-links">
           <a mat-button routerLink="/">Home</a>
-          <a mat-button routerLink="/products">Products</a>
+          <!-- <a mat-button routerLink="/products">Products</a> -->
           <a mat-button routerLink="/admin">Admin</a>
           <a mat-button routerLink="/about">About</a>
         </div>
@@ -37,9 +37,14 @@
         <span class="spacer"></span>
 
         <!-- Cart Button (Always Visible) -->
-        <button mat-icon-button routerLink="/cart" aria-label="View cart">
-          <mat-icon>shopping_cart</mat-icon>
-        </button>
+        <div class="cart-container">
+          <button mat-icon-button routerLink="/cart" aria-label="View cart">
+            <mat-icon style="color: black">shopping_cart</mat-icon>
+          </button>
+          <span *ngIf="cartService.totalCartItems() > 0" class="cart-badge">
+            {{ cartService.totalCartItems() }}
+          </span>
+        </div>
       </mat-toolbar-row>
     </mat-toolbar>
 

@@ -7,13 +7,14 @@ import { CheckoutComponent } from './features/checkout/checkout.component';
 import { AuthGuard } from './shared/auth.guard';
 import { AdminComponent } from './features/admin/admin.component';
 import { LoginComponent } from './components/login/login.component';
+import { AboutComponent } from './features/about/about.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'products', component: ProductListComponent },
-  { path: 'product/:id', component: ProductDetailComponent },
   { path: 'cart', component: CartComponent },
   { path: 'checkout', component: CheckoutComponent },
+  { path: 'about', component: AboutComponent },
   {
     path: 'admin',
     loadChildren: () =>
@@ -22,5 +23,6 @@ export const routes: Routes = [
       ),
   },
   { path: 'products/:categoryId', component: ProductListComponent },
+  { path: 'product/:productId', component: ProductDetailComponent },
   { path: 'login', component: LoginComponent },
 ];

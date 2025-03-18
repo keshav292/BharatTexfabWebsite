@@ -7,6 +7,7 @@
         mat-card-image
         [src]="getImageSource(product.imageUrl)"
         [alt]="product.name"
+        (click)="onClickProductItem(product.id)"
       />
       <mat-card-content>
         <h2 class="product-name">{{ product.name }}</h2>

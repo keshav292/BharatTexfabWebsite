@@ -1,8 +1,10 @@
-.container {
+
+
+ .container {
     padding: 20px;
     max-width: 1200px;
     margin: auto;
-  }
+  } 
 
   .title {
     font-size: 24px;
@@ -11,11 +13,11 @@
     margin-bottom: 20px;
   }
 
-  .product-grid {
+   .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
-  }
+  } 
 
   .product-card {
     max-width: 250px; /* Set a reasonable max width */

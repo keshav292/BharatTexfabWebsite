@@ -1,1 +1,23 @@
-<p>product-detail works!</p>
+<div class="container">
+  <mat-card class="product-card">
+    <div class="product-content">
+      <!-- Product Image -->
+      <div class="image-container">
+        <img
+          [src]="productImageUrl"
+          [alt]="product?.name"
+          class="product-image"
+        />
+      </div>
+
+      <!-- Product Details -->
+      <div class="details">
+        <h1>{{ product?.name }}</h1>
+        <p class="price">₹{{ product?.price }}</p>
+        <mat-divider></mat-divider>
+        <p class="description">{{ product?.description }}</p>
+        <button mat-stroked-button (click)="addToCart()">Add to Cart</button>
+      </div>
+    </div>
+  </mat-card>
+</div>
