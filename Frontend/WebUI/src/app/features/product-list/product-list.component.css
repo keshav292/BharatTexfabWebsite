@@ -72,6 +72,11 @@ mat-card-actions button {
   font-weight: bold;
 }
 
+button {
+  margin-top: 15px;
+  width: 100%;
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
   .product-grid {

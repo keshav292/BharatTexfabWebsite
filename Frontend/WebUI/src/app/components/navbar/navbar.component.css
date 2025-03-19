@@ -1,91 +1,103 @@
-/* Sidenav Container */
-.sidenav-container {
-    height: 100vh;
-    
-  }
+/* Fix navbar at the top */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1100;
+  background-color: rgb(238, 127, 30);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
-  /* Sidebar Styles */
-  .sidenav {
-    width: 100px;
-    color: white;
-    background-color: white;
-    
-  }
+/* Ensure content is visible below navbar */
+mat-sidenav-content {
+  padding-top: 65px; /* Adjust based on navbar height */
+}
 
   /* Toolbar (Navbar) */
-  mat-toolbar {
-    display: flex;
-    align-items: center;
-    color: white;
-    background-color: rgb(238, 127, 30);
-  }
+mat-toolbar {
+  display: flex;
+  align-items: center;
+  color: white;
+  background-color: rgb(238, 127, 30);
+}
 
-  .spacer {
-    flex: 1;
-  }
+mat-icon {
+  color: white
+}
 
-  .logo {
-    font-size: 20px;
-    font-weight: bold;
-  }
+.spacer {
+  flex: 1;
+}
 
-  /* Navigation Links (Visible on Desktop) */
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Navigation Links (Visible on Desktop) */
+.nav-links {
+  display: flex;
+  gap: 15px;
+  margin-left: 25px;
+}
+
+/* Sidebar (Mobile Menu) */
+.sidenav {
+  width: 100px; /* Full width for better usability */
+  background-color: orange;
+  color: white;
+  height: 100vh;
+}
+
+.mobile-menu-btn{
+  display:none
+}
+
+.cart-container {
+  position: relative;
+  display: inline-block;
+}
+
+.cart-badge {
+  position: absolute;
+  top: 3px; /* Adjusted down slightly */
+  right: 3px; /* Ensures proper spacing from the cart icon */
+  transform: translate(50%, -50%); /* Keeps it aligned to the top-right */
+  background: white; /* Bright red for visibility */
+  color: black;
+  font-size: 12px; /* Small but readable */
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 2px 5px;
+  min-width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2); /* Softer shadow */
+  font-family: Arial, sans-serif;
+  border: 1.5px solid white; /* Matches the black cart icon */
+  line-height: 1;
+}
+
+/* Backdrop when sidenav is open */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.2); /* Dimming effect */
+  z-index: 999;
+}
+
+/* Hide desktop links on mobile */
+@media (max-width: 768px) {
   .nav-links {
-    display: flex;
-    gap: 15px;
-    margin-left: 25px;
-  }
-
-  /* Mobile Menu Button */
-  .mobile-menu-btn {
     display: none;
   }
-  .cart-container {
-    position: relative;
-    display: inline-block;
+  .mobile-menu-btn {
+    display: block;
   }
-  
-  .cart-badge {
-    position: absolute;
-    top: 3px; /* Adjusted down slightly */
-    right: 3px; /* Ensures proper spacing from the cart icon */
-    transform: translate(50%, -50%); /* Keeps it aligned to the top-right */
-    background: white; /* Bright red for visibility */
-    color: black;
-    font-size: 12px; /* Small but readable */
-    font-weight: bold;
-    border-radius: 50%;
-    padding: 2px 5px;
-    min-width: 18px;
-    height: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2); /* Softer shadow */
-    font-family: Arial, sans-serif;
-    border: 1.5px solid white; /* Matches the black cart icon */
-    line-height: 1;
-  }
-  
-  
-  /* Hide Nav Links and Show Hamburger on Small Screens */
-  @media (max-width: 768px) {
-    .nav-links {
-      display: none;
-    }
-    .mobile-menu-btn {
-      display: block;
-    }
-  }
-
-  .location-container {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  mat-icon {
-    margin-right: 5px;
-  }
-
+}

@@ -8,6 +8,7 @@ import { Product } from '../../shared/models/Product';
 import { ProductService } from '../../shared/services/ProductService/product.service';
 import { CategoryService } from '../../shared/services/CategoryService/category.service';
 import { ImageService } from '../../shared/services/ImageService/image.service';
+import { CartService } from '../../shared/services/CartService/cart.service';
 
 @Component({
   selector: 'app-product-list',
@@ -27,6 +28,7 @@ export class ProductListComponent {
   productService = inject(ProductService);
   categoryService = inject(CategoryService);
   imageService = inject(ImageService);
+  cartService = inject(CartService);
   router = inject(Router);
 
   categoryId = signal<number | null>(null);
@@ -65,5 +67,9 @@ export class ProductListComponent {
 
   onClickProductItem(productId: number) {
     this.router.navigateByUrl(`/product/${productId}`);
+  }
+
+  addToCart(product: Product) {
+    this.cartService.addToCart(product);
   }
 }

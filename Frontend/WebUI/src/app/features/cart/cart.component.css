@@ -56,8 +56,8 @@
   /* Product Details */
   .cart-details {
     flex-grow: 1;
-    min-width: 120px;
     font-family: "Poppins", sans-serif;
+    padding-left: 20px; 
   }
   
   .cart-details h3 {
@@ -94,7 +94,6 @@
     font-size: 16px;
     font-weight: 600;
     color: #444;
-    min-width: 25px;
     text-align: center;
   }
   
@@ -103,7 +102,7 @@
     font-size: 15px;
     font-weight: 400;
     color: #444;
-    min-width: 70px;
+    padding-left: 20px;
     text-align: right;
   }
   
@@ -157,46 +156,6 @@
     transform: scale(1.04);
   }
   
-  @media (max-width: 768px) {
-    .cart-content {
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 8px;
-      padding-right: 10px; /* Extra padding to prevent overflow */
-    }
   
-    .cart-details {
-      text-align: left;
-      flex-grow: 1;
-      min-width: 100px;
-    }
-  
-    .quantity-controls {
-      justify-content: center;
-      flex-shrink: 0; /* Prevent shrinking */
-    }
-  
-    .product-total {
-      text-align: right;
-      flex-shrink: 0;
-    }
-  
-    /* Force Delete button inside card */
-    mat-card-actions {
-      justify-content: center;
-      width: 100%;
-      display: flex;
-      padding: 5px 0;
-    }
-  
-    mat-card-actions mat-icon {
-      font-size: 22px;
-      padding: 5px;
-      min-width: 30px;
-      text-align: center;
-      position: relative;
-      right: 0; /* Prevents it from shifting out */
-    }
-  }
   
   

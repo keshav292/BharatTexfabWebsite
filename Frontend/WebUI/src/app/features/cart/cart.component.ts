@@ -12,11 +12,20 @@ import { MatIcon } from '@angular/material/icon';
 import { NgFor, NgIf } from '@angular/common';
 import { Order, OrderItem } from '../../shared/models/Order';
 import { ImageService } from '../../shared/services/ImageService/image.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [MatCard, MatCardContent, MatIcon, MatCardActions, NgIf, NgFor],
+  imports: [
+    MatCard,
+    MatCardContent,
+    MatIcon,
+    MatCardActions,
+    NgIf,
+    NgFor,
+    RouterModule,
+  ],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.css',
 })

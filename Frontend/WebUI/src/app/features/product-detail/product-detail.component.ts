@@ -8,11 +8,18 @@ import { Product } from '../../shared/models/Product';
 import { ProductService } from '../../shared/services/ProductService/product.service';
 import { ImageService } from '../../shared/services/ImageService/image.service';
 import { CartService } from '../../shared/services/CartService/cart.service';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-product-details',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatButtonModule, MatDividerModule],
+  imports: [
+    CommonModule,
+    MatCardModule,
+    MatButtonModule,
+    MatDividerModule,
+    MatIcon,
+  ],
   templateUrl: './product-detail.component.html',
   styleUrl: './product-detail.component.css',
 })

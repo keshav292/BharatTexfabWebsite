@@ -1,0 +1,5 @@
+.content-container {
+    flex: 1;
+    overflow-y: auto; /* Enables scrolling only here */
+    padding-top: 0px; /* Adjust this based on navbar height */
+  }

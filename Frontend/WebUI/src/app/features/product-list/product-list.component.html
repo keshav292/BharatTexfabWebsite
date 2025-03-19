@@ -14,7 +14,7 @@
         <p class="product-price">₹{{ product.price }}</p>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-button color="primary">
+        <button mat-stroked-button (click)="addToCart(product)">
           <mat-icon>shopping_cart</mat-icon> Add to Cart
         </button>
       </mat-card-actions>

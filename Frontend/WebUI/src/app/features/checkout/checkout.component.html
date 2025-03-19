@@ -1,1 +1,49 @@
-<p>checkout works!</p>
+<div class="checkout-container">
+  <h2>Checkout</h2>
+
+  <!-- Show if the cart is empty -->
+  <p *ngIf="cartService.totalCartItems() === 0" class="empty-cart">
+    Nothing to checkout
+  </p>
+
+  <!-- Show checkout form if cart has items -->
+  <div *ngIf="cartService.totalCartItems() > 0">
+    <mat-card class="cart-items">
+      <mat-list>
+        <mat-list-item *ngFor="let item of cartService.items">
+          <div class="item-details">
+            <h4>{{ item.product.name }}</h4>
+            <p>Qty: {{ item.quantity }} | Price: ₹{{ item.product.price }}</p>
+          </div>
+        </mat-list-item>
+      </mat-list>
+    </mat-card>
+
+    <mat-card class="customer-info">
+      <h3>Customer Information</h3>
+      <mat-form-field appearance="outline">
+        <mat-label>Name (optional)</mat-label>
+        <input matInput [(ngModel)]="customer.name" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Mobile Number</mat-label>
+        <input matInput type="tel" required [(ngModel)]="customer.phone" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Email (optional)</mat-label>
+        <input matInput type="email" [(ngModel)]="customer.email" />
+      </mat-form-field>
+    </mat-card>
+
+    <div class="checkout-actions">
+      <button mat-raised-button color="primary" (click)="sendOrderByEmail()">
+        Send via Email
+      </button>
+      <button mat-raised-button color="accent" (click)="sendOrderByWhatsApp()">
+        Send via WhatsApp
+      </button>
+    </div>
+  </div>
+</div>

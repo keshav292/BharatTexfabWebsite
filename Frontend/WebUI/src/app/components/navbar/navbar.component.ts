@@ -25,4 +25,5 @@ import { CartService } from '../../shared/services/CartService/cart.service';
 })
 export class NavbarComponent {
   cartService = inject(CartService);
+  isDrawerOpen = false;
 }

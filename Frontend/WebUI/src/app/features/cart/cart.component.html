@@ -59,7 +59,7 @@
     <mat-card class="cart-summary">
       <mat-card-content>
         <h3>Grand Total: ₹{{ cartService.total }}</h3>
-        <button mat-raised-button color="accent" (click)="checkout()">
+        <button mat-raised-button color="accent" routerLink="/checkout">
           Proceed to Checkout
         </button>
       </mat-card-content>
